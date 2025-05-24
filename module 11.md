@@ -16,20 +16,32 @@ Program:
 #include<stdio.h>
 int max_of_four(int a,int b,int c,int d)
 {
- if(a>b && a>c &&a>d)return a;
- else if(b>a &&b>c && b>d)return b;
- else if(c>a &&c>b && c>d)return c;
- else return d;
-}
-int main ()
+if(a>b && a>c && a>d)
 {
- int a,b,c,d;
- scanf("%d %d %d %d",&a,&b,&c,&d);
- int max=max_of_four(a,b,c,d);
- printf("%d",max);
-} 
+return a;
+}
+else if(b>a && b>c && b>d)
+{
+return b;
+}
+else if(c>a && c>b && c>d)
+{
+return c;
+}
+else
+{
+return d;
+}
+}
+int main()
+{
+int n1,n2,n3,n4,greater; scanf("%d%d%d%d",&n1,&n2,&n3,&n4); greater=max_of_four(n1,n2,n3,n4); printf("%d",greater);
+}
+
 ```
 Output:
+![image](https://github.com/user-attachments/assets/1e610c20-facc-4621-bc18-f7e78b8020f7)
+
 
 Result:
 Thus, the program  that create a function to find the greatest number is verified successfully.
@@ -235,32 +247,26 @@ o	If a character is not a space, it may belong to a word. If it's the first non-
 
 Program:
 ```
-#include <stdio.h>
-#include <ctype.h>
+#include<stdio.h>
+#include<string.h>
 int main()
 {
- char sentence[1000];
- int i = 0, words = 0, inWord = 0;
- printf("Enter a sentence: ");
- fgets(sentence, sizeof(sentence), stdin);
- while (sentence[i] != '\0')
- {
- if (isspace(sentence[i]))
- {
- inWord = 0;
- } else if (inWord == 0)
- {
- inWord = 1;
- words++;
- }
- i++;
- }
- printf("Number of words: %d\n", words);
- return 0;
+    char str[100];
+    fgets(str,sizeof(str),stdin);
+    int len=sizeof(str);
+    int count=1;
+     for(int i=0;i<len-1;i++){
+         if(str[i]==' ')
+         count++;
+         
+     }
+     printf("Total number of words in the string is :%d",count);
+    return 0;
 }
+
 ```
 Output:
-![image](https://github.com/user-attachments/assets/707a42af-492c-48cf-8428-8c1edaf59c56)
+![image](https://github.com/user-attachments/assets/89ca740d-7881-4441-8644-6b30d4fc0295)
 
 
 
