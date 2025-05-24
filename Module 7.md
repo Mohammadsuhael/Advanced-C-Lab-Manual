@@ -17,53 +17,33 @@ Else
 Program:
 
 ```
-
-#include <stdio.h>
-struct Person
+#include<stdio.h> struct eligib
 {
- char name[50];
- int age;
+int age; char n[4];
 };
-void checkEligibility(struct Person people[], int n)
-{
- printf("\n--- Vaccine Eligibility ---\n");
-for (int i = 0; i < n; i++)
- {
- printf("Name: %s\n", people[i].name);
- printf("Age: %d\n", people[i].age);
- if (people[i].age >= 6)
- {
- printf("Status: Eligible for vaccine.\n");
- }
- else
- {
- printf("Status: Not eligible for vaccine.\n");
- }
- printf("---------------------------\n");
- }
-}
 int main()
 {
- struct Person people[100];
- int n;
- printf("Enter number of people: ");
- scanf("%d", &n);
- for (int i = 0; i < n; i++)
- {
- printf("\nEnter details for person %d:\n", i + 1);
- printf("Name: ");
- scanf(" %[^\n]", people[i].name);
- printf("Age: ");
- scanf("%d", &people[i].age);
- }
- checkEligibility(people, n);
- return 0;
+struct eligib e; scanf("%d%s",&e.age,e.n);
+if(e.age<=6)
+{
+printf("Age:%d\nName:%svaccine:%d\neligibility:no",e.age,e.n,e.age);
 }
+ 
+else
+{
+}
+ 
+
+printf("Age:%d\nName:%svaccine:%d\neligibility:yes",e.age,e.n,e.age);
+ 
+
+}
+
 ```
 
 Output:
 
-![image](https://github.com/user-attachments/assets/28f3f504-e2e9-4cb6-903b-f30f27772239)
+![image](https://github.com/user-attachments/assets/c7754503-b6fa-41dc-8275-4c0bd803afd6)
 
 
 Result:
@@ -87,31 +67,22 @@ Algorithm:
 Program:
 
 ```
-#include<stdio.h>
-struct number
+#include<stdio.h> struct numbers
 {
- int num1;
- int num2;
-};
-struct result
+int a; int b;
+}n;
+int add(struct numbers n); int main()
 {
- int add;
-};
-struct result process(struct number num)
-{
- struct result res;
- res.add=num.num1+num.num2;
- return res;
-};
-int main()
-{
- struct number num;
- scanf("%d %d ",&num.num1,&num.num2);
- struct result result;
- result=process(num);
- printf("%d",result.add);
- return 0;
+
+scanf("%d %d ",&n.a,&n.b);
+printf("%d",add(n));
 }
+int add(struct numbers n)
+{
+return n.a+n.b;
+}
+
+
 
 ```
 
@@ -121,7 +92,7 @@ int main()
 Output:
 
 
-![image](https://github.com/user-attachments/assets/27b7ab94-5c9e-4392-94af-99df4f78065c)
+![image](https://github.com/user-attachments/assets/65c3c6e2-9217-4cd2-87e5-14ee106686ab)
 
 
 
@@ -156,22 +127,15 @@ Use scanf to input the file name into the name array.
 Program:
 
 ```
-
-#include <stdio.h>
-int main ()
+#include <stdio.h> int main()
 {
- char str[50];
- scanf("%s",str);
- FILE *ptr;
- ptr=fopen(str,"w");
- printf("%s File Created Successfully\n",str);
- if(ptr!=NULL)
- {
- printf("%s File Opened\n",str);
- }
- fclose(ptr);
- printf("%s File Closed",str);
+FILE *p;
+char name[30]; scanf("%s",name);
+printf("%s File Created Successfully",name); p=fopen("name","w");
+printf("\n%s File Opened",name); fclose(p);
+printf("\n%s File Closed",name);
 }
+
 ```
 
 
@@ -179,7 +143,7 @@ int main ()
 Output:
 
 
-![image](https://github.com/user-attachments/assets/9d89c48e-65b5-472c-8522-254eae63c1c1)
+![image](https://github.com/user-attachments/assets/877c274e-2e16-4512-aafb-a23a1f50205a)
 
 
 
@@ -219,24 +183,20 @@ Use scanf to input the file name into the name array and the number of strings i
 Program:
 
 ```
-#include <stdio.h>
-int main ()
+#include <stdio.h> int main()
 {
- char str[50];
- scanf("%s",str);
- FILE *ptr;
- ptr=fopen(str,"w");
- printf("%s Opened\n",str);
- int a;
- float b;
- scanf("%d",&a);
- for(int i=0;i<b;i++)
- {
- scanf("%f",&b);
- }
- printf("Data added Successfully\n");
- fclose(ptr);
+FILE *p;
+char name[20]; int num;
+char text[50]; scanf("%s%d",name,&num); p=fopen("name","w"); printf("%s Opened",name); for(int i=0;i<num;i++)
+{
+scanf("%s",text); fputs(text,p);
 }
+printf("\nData added Successfully");
+
+}
+
+
+
 ```
 
 
@@ -244,7 +204,7 @@ int main ()
 Output:
 
 
-![image](https://github.com/user-attachments/assets/f9e3aeed-5840-433b-a2a1-9ce7e5b3ad65)
+![image](https://github.com/user-attachments/assets/17aa4a42-643f-4be4-abae-fce083ef095e)
 
 
 
@@ -295,36 +255,35 @@ Program:
 #include <stdlib.h>
 struct Subject
 {
- char name[50];
- int marks;
+    char name[20];
+    int marks;
 };
 int main()
 {
- int n, i;
- struct Subject *s;
- printf("Enter the number of subjects: ");
- scanf("%d", &n);
- s = (struct Subject *)malloc(n * sizeof(struct Subject));
- if (s == NULL)
- {
- printf("Memory allocation failed.\n");
- return 1;
- }
- for (i = 0; i < n; i++)
- {
- printf("\nEnter details for subject %d:\n", i + 1);
- printf("Subject Name: ");
- scanf(" %[^\n]", s[i].name);
- printf("Marks: ");
- scanf("%d", &s[i].marks);
- }
- printf("\n--- Subject Details ---\n");
- for (i = 0; i < n; i++) {
- printf("Subject %d: %s - %d marks\n", i + 1, s[i].name, s[i].marks);
- }
- free(s);
- return 0;
-} 
+    int i,n;
+    scanf("%d",&n);
+    struct Subject *s = (struct Subject *)malloc(n*sizeof(struct Subject));
+    if(s==NULL)
+    {
+        printf("Memory Alocation Failed\n");
+        return 1;
+    }
+    for(i=0;i<n;i++)
+    {
+        scanf("%s %d",s[i].name,&s[i].marks);
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("%s  %d\n",s[i].name,s[i].marks);
+    }
+    
+    free (s);
+    
+    return 0;
+}
+
+
+
 ```
 
 
@@ -332,7 +291,7 @@ int main()
 Output:
 
 
-![image](https://github.com/user-attachments/assets/edb15478-b9d4-4dc4-a387-e67dcdc5a3f3)
+![image](https://github.com/user-attachments/assets/d68a6563-e8ff-42bc-90ab-cdf87419dfd3)
 
 
 
