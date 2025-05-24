@@ -81,24 +81,25 @@ Algorithm:
 Program:
 
 ```
-#include <stdio.h>
-int main() {
- int freq[10] = {0};
- char ch;
- while ((ch = getchar()) != '\n')
- {
- if (ch >= '0' && ch <= '3')
- {
- int digit = ch - '0';
- freq[digit]++;
- }
- }
- for (int i = 0; i < 10; i++)
- {
- printf("%d ", freq[i]);
- }
- return 0;
+#include<stdio.h> #include<string.h> int main()
+{
+char a[50]; scanf("%s",a); int l=strlen(a); char h='0';
+for(int i=0;i<4;i++)
+{
+int c=0;
+for(int j=0;j<l;j++)
+{
+if(a[j]==h)
+{
+c+=1;
 }
+}
+printf("%d ",c); h++;
+}
+}
+
+
+
 ```
 
 
@@ -106,7 +107,7 @@ int main() {
 Output:
 
 
-![image](https://github.com/user-attachments/assets/a11be4d4-6588-4109-973c-f538d192da20)
+![image](https://github.com/user-attachments/assets/ef405d58-805d-46a6-8728-01f81b7458ed)
 
 
 
@@ -282,19 +283,21 @@ Program:
 
 ```
 #include <stdio.h>
-int square() {
- int num;
- printf("Enter a number: ");
- scanf("%d", &num);
- return num * num;
+void square();
+int main(){
+    
+    square();
+    return 0;
 }
-int main() {
- int result;
+void square(){
+    int a;
+    scanf("%d",&a);
+    float ans = a*a;
+    printf("The square of %d is : %.2f",a,ans);
+}
 
- result = square();
- printf("Square of the number is: %d\n", result);
- return 0;
-}
+
+
 ```
 
 
@@ -302,7 +305,7 @@ int main() {
 Output:
 
 
-![image](https://github.com/user-attachments/assets/7a8352a9-e2d8-4549-97d7-26c8fc641334)
+![image](https://github.com/user-attachments/assets/e287fa6d-1242-457c-91b2-5ab46c481688)
 
 
 
